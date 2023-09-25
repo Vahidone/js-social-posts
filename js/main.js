@@ -109,3 +109,37 @@ posts.forEach((post) => {
 
 
 
+
+
+// creo il gestore di Eventi per i Pulsanti "Mi Piace"
+
+let isLiked = false;
+
+container.addEventListener('click', function (event) {
+    if (event.target.classList.contains('js-like-button')) {
+        event.preventDefault();
+
+        const postId = event.target.dataset.postid;
+        const likeCounter = document.getElementById(`like-counter-${postId}`);
+
+       
+        if (!isLiked) {
+
+            likeCounter.innerText = parseInt(likeCounter.innerText) + 1;
+
+            event.target.classList.add('like-button-liked');
+
+            isLiked = true;
+
+        } else {
+
+            likeCounter.innerText = parseInt(likeCounter.innerText) - 1;
+
+            event.target.classList.remove('like-button-liked');
+
+            isLiked = false;
+        }
+    }
+});
+
+
