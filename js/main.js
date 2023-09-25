@@ -123,6 +123,7 @@ function createPostCard(post) {
            
         }
 
+        // si inverte lo stato di isLiked 
         isLiked = !isLiked
 
     });
