@@ -62,7 +62,7 @@ const posts = [
 
 
 const container = document.getElementById('container');
-let isLiked = false;
+
 
 function createPostCard(post) {
     const postElement = document.createElement('div');
@@ -104,11 +104,15 @@ function createPostCard(post) {
     
     // Aggiungo un gestore di eventi al bottone "Mi Piace" del post
     const likeButton = postElement.querySelector('.js-like-button');
+    let isLiked = false;
+
+    
     likeButton.addEventListener('click', function () {
         
 
         const likeCounter = postElement.querySelector('.js-likes-counter');
         
+
         if (!isLiked) {
             likeCounter.innerText = parseInt(likeCounter.innerText) + 1;
             likeButton.classList.add('like-button-liked');
