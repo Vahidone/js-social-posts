@@ -1,6 +1,6 @@
 # js-social-posts
 
-### consegna
+## consegna
 Descrizione**
 Ricreiamo un feed social aggiungendo al layout di base fornito, il nostro script JS in cui:
 **Milestone 1** - Creiamo il nostro array di oggetti che rappresentano ciascun post.
@@ -19,10 +19,30 @@ Ogni post dovrà avere le informazioni necessarie per stampare la relativa card:
 Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
 
-#### pseudocodice
+### pseudocodice
 
 1. Riportare i dati forniti in javascript
 2. cancellare le card create precedentemente in html
 3. creare una nuova card in js: Utilizzare template string per costruire l'HTML della card del post, includendo il nome e l'immagine dell'autore, la data, il contenuto, l'immagine/media e il contatore dei "Mi Piace".
 4. Restituire l'elemento "div" appena creato al container.
 5. creare il gestore di Eventi per i Pulsanti "Mi Piace": 
+
+### Bonus 1: Formattare le date in formato italiano (gg/mm/aaaa)
+### pseudocodice
+1. utilizzare il metodo toLocaleDateString per formattare la data fornita in una stringa leggibile in italiano.
+
+
+### Bonus 2: Gestire l’assenza dell’immagine profilo con un elemento di fallback che contiene le iniziali dell’utente (es. Luca Formicola > LF).
+
+
+### Bonus 3: Al click su un pulsante “Mi Piace” di un post, se abbiamo già cliccato dobbiamo decrementare il contatore e cambiare il colore del bottone.
+
+### pseudocodice
+1. Decrementare il contatore dei "Mi Piace" di 1.
+2. Rimuovere la classe CSS che indica che il pulsante è stato già premuto.
+3. Impostare la variabile "isLiked" a "false" per indicare che l'utente non ha più messo "Mi Piace" al post.
+
+
+
+
+
