@@ -104,8 +104,8 @@ function createPostCard(post) {
     
     // Aggiungo un gestore di eventi al bottone "Mi Piace" del post
     const likeButton = postElement.querySelector('.js-like-button');
-    likeButton.addEventListener('click', function (event) {
-        event.preventDefault();
+    likeButton.addEventListener('click', function () {
+        
 
         const likeCounter = postElement.querySelector('.js-likes-counter');
         
