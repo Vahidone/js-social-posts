@@ -106,7 +106,7 @@ function createPostCard(post) {
     const likeButton = postElement.querySelector('.js-like-button');
     let isLiked = false;
 
-    
+
     likeButton.addEventListener('click', function () {
         
 
@@ -116,12 +116,15 @@ function createPostCard(post) {
         if (!isLiked) {
             likeCounter.innerText = parseInt(likeCounter.innerText) + 1;
             likeButton.classList.add('like-button-liked');
-            isLiked = true;
+          
         } else {
             likeCounter.innerText = parseInt(likeCounter.innerText) - 1;
             likeButton.classList.remove('like-button-liked');
-            isLiked = false;
+           
         }
+
+        isLiked = !isLiked
+
     });
 
     return postElement;
