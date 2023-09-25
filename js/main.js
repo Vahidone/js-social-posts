@@ -60,8 +60,8 @@ const posts = [
 
 
 
-
 const container = document.getElementById('container');
+let isLiked = false;
 
 function createPostCard(post) {
     const postElement = document.createElement('div');
@@ -72,7 +72,7 @@ function createPostCard(post) {
         <div class="post__header">
             <div class="post-meta">
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${post.author.image}"  alt="${post.author.name}">
+                    <img class="profile-pic" src="${post.author.image}">
                 </div>
                 <div class="post-meta__data">
                     <div class="post-meta__author">${post.author.name}</div>
@@ -82,7 +82,7 @@ function createPostCard(post) {
         </div>
         <div class="post__text">${post.content}</div>
         <div class="post__image">
-            <img src="${post.media}" alt="">
+            <img src="${post.media}">
         </div>
         <div class="post__footer">
             <div class="likes js-likes">
@@ -97,6 +97,28 @@ function createPostCard(post) {
         </div>
     `;
 
+
+
+
+    // Aggiungo un gestore di eventi al bottone "Mi Piace" del post
+    const likeButton = postElement.querySelector('.js-like-button');
+    likeButton.addEventListener('click', function () {
+
+        const postId = post.id;
+        const likeCounter = postElement.querySelector('.js-likes-counter');
+        
+        if (!isLiked) {
+            likeCounter.innerText = parseInt(likeCounter.innerText) + 1;
+            likeButton.classList.add('like-button-liked');
+            isLiked = true;
+        } else {
+            likeCounter.innerText = parseInt(likeCounter.innerText) - 1;
+            likeButton.classList.remove('like-button-liked');
+            isLiked = false;
+        }
+    });
+    
+
     return postElement;
 }
 
@@ -105,46 +127,3 @@ posts.forEach((post) => {
     const postCard = createPostCard(post);
     container.appendChild(postCard);
 });
-
-
-
-
-
-
-// creo il gestore di Eventi per i Pulsanti "Mi Piace"
-
-let isLiked = false;
-
-container.addEventListener('click', function (event) {
-    if (event.target.classList.contains('js-like-button')) {
-        event.preventDefault();
-
-        const postId = event.target.dataset.postid;
-        const likeCounter = document.getElementById(`like-counter-${postId}`);
-
-       
-        if (!isLiked) {
-
-            likeCounter.innerText = parseInt(likeCounter.innerText) + 1;
-
-            event.target.classList.add('like-button-liked');
-
-            isLiked = true;
-
-        } else {
-
-            likeCounter.innerText = parseInt(likeCounter.innerText) - 1;
-
-            event.target.classList.remove('like-button-liked');
-
-            isLiked = false;
-        }
-    }
-});
-
-
-
-
-
-
-
