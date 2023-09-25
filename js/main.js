@@ -8,7 +8,7 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=10"
         },
         "created": "2021-06-25",
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Pioggia leggera danza nel silenzio, sussurri d'argento tra foglie e terra, il mondo s'addormenta nel suo abbraccio liquido.",
         "media": "https://unsplash.it/600/300?image=171",
         "likes": 80
     },
@@ -19,7 +19,7 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=20"
         },
         "created": "2021-09-03",
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Nel campo di grano, ondeggiano segreti d'oro sotto il sole, danza la vita tra spighe dorate, un sussurro nell'anima.",
         "media": "https://unsplash.it/600/400?image=112",
         "likes": 120
     },
@@ -30,7 +30,7 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=30"
         },
         "created": "2021-05-15",
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Parigi, città delle meraviglie, sotto il cielo d'azzurro la Torre Eiffel sfavilla come un sogno d'amore nell'eternità.",
         "media": "https://unsplash.it/600/400?image=234",
         "likes": 78
     },
@@ -41,7 +41,7 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=40"
         },
         "created": "2021-04-03",
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "Nella letteratura, parole come stelle illuminano il buio della mente, creando mondi incantati e svelando l'anima umana.",
         "media": "https://unsplash.it/600/400?image=24",
         "likes": 56
     },
@@ -52,7 +52,7 @@ const posts = [
             "image": "https://unsplash.it/300/300?image=50"
         },
         "created": "2021-03-05",
-        "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "content": "L'architettura è il linguaggio silente delle forme, dove pietra e spazio danzano insieme, raccontando storie di tempo e bellezza.",
         "media": "https://unsplash.it/600/400?image=534",
         "likes": 95
     }
@@ -72,22 +72,22 @@ function createPostCard(post) {
         <div class="post__header">
             <div class="post-meta">
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${post.author.image}">
+                    <img class="profile-pic" src="${post.author.image}"  alt="${post.author.name}">
                 </div>
                 <div class="post-meta__data">
                     <div class="post-meta__author">${post.author.name}</div>
-                    <div class="post-meta__time">${new Date(post.created).toLocaleDateString('en-US')}</div>
+                    <div class="post-meta__time">${new Date(post.created).toLocaleDateString('it-IT')}</div>
                 </div>
             </div>
         </div>
         <div class="post__text">${post.content}</div>
         <div class="post__image">
-            <img src="${post.media}">
+            <img src="${post.media}" alt="">
         </div>
         <div class="post__footer">
             <div class="likes js-likes">
                 <div class="likes__cta">
-                    <a href="#" class="like-button js-like-button" data-postid="${post.id}">
+                    <a href="##" class="like-button js-like-button" data-postid="${post.id}">
                         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                         <span class="like-button__label">Mi Piace</span>
                     </a>
@@ -141,5 +141,10 @@ container.addEventListener('click', function (event) {
         }
     }
 });
+
+
+
+
+
 
 
