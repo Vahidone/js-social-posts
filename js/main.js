@@ -60,7 +60,6 @@ const posts = [
 
 
 
-
 const container = document.getElementById('container');
 
 
@@ -99,8 +98,6 @@ function createPostCard(post) {
     `;
 
 
-
-
     
     // Aggiungo un gestore di eventi al bottone "Mi Piace" del post
     const likeButton = postElement.querySelector('.js-like-button');
@@ -108,7 +105,6 @@ function createPostCard(post) {
 
 
     likeButton.addEventListener('click', function () {
-        
 
         const likeCounter = postElement.querySelector('.js-likes-counter');
         
@@ -120,7 +116,6 @@ function createPostCard(post) {
         } else {
             likeCounter.innerText = parseInt(likeCounter.innerText) - 1;
             likeButton.classList.remove('like-button-liked');
-           
         }
 
         // si inverte lo stato di isLiked 
